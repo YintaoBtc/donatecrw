@@ -1,0 +1,56 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Projects{% endblock %}
+
+{% load qr_code %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+        {% for service in service_list %}
+        {% if service.completed == True %}
+        <div class="col-md-6">
+          <div class="card mt-4 mb-4 box-shadow">
+            <img class="card-img-top" src="{{service.image.url}}" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text"><b>{{service.subtitle}}</b></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="section-heading-upper">
+                  <h6><b>Goal: </b><span class="badge badge-primary">{{service.crw_donate}} CRW</span></h6>
+                </div>
+                <div class="section-heading-upper">
+                    <h6><b>Donated: </b><span class="badge badge-primary">{{service.amount_donate}} CRW</span></h6>
+                </div>
+                <div class="section-heading-upper">
+                    <h6><b>COMPLETED!! Thanks at all!!</b></span></h6>
+                </div>
+                  <span >{% qr_from_text service.wallet_donate size="T" %} </span>  
+              </div>
+              <p><b>Progress: </b></p>
+              <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                  aria-valuemin="0" aria-valuemax="100" style="width:{{service.progress}}">
+                    {{service.progress}}
+                  </div>
+              </div>
+              <br>
+                <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a href="{% url 'service' service.id %}" class="btn btn-primary" role="button">See project</a>
+                </div>
+                <small class="text-muted">Finish:{{service.finish|date:"SHORT_DATE_FORMAT"}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+

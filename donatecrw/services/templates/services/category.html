@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Servicios{% endblock %}
+
+{% load qr_code %}
+
+{% block content %}
+  {% for service in category.get_projects.all%}
+  
+    <section class="page-section">
+      <div class="container">
+        <div class="product-item">
+          <div class="product-item-title d-flex">
+            <div class="bg-faded p-5 d-flex mr-auto rounded">
+              <h2 class="section-heading mb-0">
+                <span class="section-heading-upper">{{service.subtitle}}</span>
+                <span class="section-heading-lower">{{service.title}}</span>
+              </h2>
+            </div>
+          </div>
+          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{service.image.url}}" alt="">
+          <div class="product-item-description d-flex ml-auto">
+            <div class="bg-faded p-5 rounded">
+              <p class="mb-0">{{service.content|safe}}</p>
+              <span class="section-heading-lower">Address Project: <b>{{service.wallet_donate}}</b></span>
+              <br>
+              <span class="section-heading-lower">Crowns donated: <b>{{service.amount_donate}} CRW </b></span>
+              <br>
+              <span class="section-heading-lower">They are still need <b>{{service.amount_needed}} CRW</b> to complete the project.</span>
+              <br>
+              <span class="section-heading-lower">Category: <b>
+                {% for category in service.categories.all %}
+                  <a href="{% url 'category' category.id %}" class="link">{{category.name}}</a>{% if not forloop.last %},{% endif %}
+                {% endfor %}
+              </b></span>
+              <br>
+              <span class="section-heading-lower">Published: <b>{{service.published|date:"SHORT_DATE_FORMAT"}}</b></span>
+              <br>
+              <span class="section-heading-upper">{% qr_from_text service.wallet_donate size="S" %} </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+  {% endfor %}
+{% endblock %}

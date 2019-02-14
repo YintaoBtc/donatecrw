@@ -1,0 +1,53 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Servicios{% endblock %}
+
+{% load qr_code %}
+
+{% block content %}
+    <section class="page-section">
+      <div class="container">
+        <div class="product-item">
+          <div class="product-item-title d-flex">
+            <div class="bg-faded p-5 d-flex mr-auto rounded">
+              <h2 class="section-heading mb-0">
+                <span class="section-heading-upper">{{service.subtitle}}</span>
+                <span class="section-heading-lower">{{service.title}}</span>
+              </h2>
+            </div>
+          </div>
+          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{service.image.url}}" alt="">
+          <div class="product-item-description d-flex ml-auto">
+            <div class="bg-faded p-5 rounded">
+              <p class="mb-0">{{service.content|safe}}</p>
+              <span class="section-heading-lower">Address Project: <a href="https://chainz.cryptoid.info/crw/address.dws?{{service.wallet_donate}}" target=_blank class="link">{{service.wallet_donate}}</a></span>
+              <br>
+              <span class="section-heading-lower">Crowns Donated: <b>{{service.amount_donate}} CRW </b></span>
+              <br>
+              <span class="section-heading-lower">Crowns Needed: <b>{{service.amount_needed}} CRW </b></span>
+              <br>
+              <span class="section-heading-lower">Category: <b>
+                {% for category in service.categories.all %}
+                  <a href="{% url 'category' category.id %}" class="link">{{category.name}}</a>{% if not forloop.last %},{% endif %}
+                {% endfor %}
+              <br>
+              <p>Progress:</p>
+              <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                  aria-valuemin="0" aria-valuemax="100" style="width:{{service.progress}}">
+                  {{service.progress}}
+                  </div>
+              </div>
+              </b>
+              <span class="section-heading-upper">{% qr_from_text service.wallet_donate size="S" %} </span>
+              <div class="btn-group">
+                <a href="{% url 'services' %}" class="btn btn-primary" role="button">Return Projects</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

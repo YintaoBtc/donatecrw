@@ -1,0 +1,56 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- Cabecera -->
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'core/img/intro.jpg' %}" alt="">
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h2 class="section-heading mb-4">
+          <span class="section-heading-upper">Use your Crown to fund community projects! </span>
+        </h2>
+        <p class="mb-3">Donate Crown is a HUB to connect Crown community projects and individuals that hold Crown and want to use them to give life to new initiatives. 
+        </p>
+        <p class="mb-3">To prevent scams, the tool is for now limited to proposal approval by the administrator of the site. In order for the admin to approve your request, your Crown identity will be verified through the references (mattermost/telegram community @names) you provide.  
+          </p>
+        <div class="intro-button mx-auto">
+          <a class="btn btn-primary btn-xl" href="{% url 'services' %}" style="color:rgb(255, 255, 255)">Collaborate!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mensaje -->
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-left rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-lower">How does it work? </span>
+          </h2>
+          <p class="mb-0">Submit a proposal using Mattermost or the Crown Forum. Once your project has been approved, it will appear in the Projects section. Anyone can scan the QR code or copy the address to send the desired amount of Crown. The Crown will be safely stored in an escrow address until the full amount has been reached and/or the conditions posed by the donators have been fulfilled. These can be made using the Crown Forum, Mattermost or Telegram.</p>
+          <br><p class="mb-0">If you have an idea that you think can be funded by the Crown community, submit a proposal through Mattermost including the following information: </p>
+            <br><ul>
+              <li> Description of the project</li>
+              <li> Amount needed</li>
+              <li> CRW Address</li>
+              <li> Name/s </li>
+              <li> References </li>
+            </ul>
+        </div>
+      </div>
+      <div class="intro-button mx-auto">
+        <a class="btn btn-primary btn-xl " href="https://mm.crownlab.eu/crown/channels/donatecrown" style="color:rgb(255, 255, 255)">Mattermost!</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
