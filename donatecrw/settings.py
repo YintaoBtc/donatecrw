@@ -15,7 +15,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = "1239021i3mdapsdsa9adas"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'social.apps.SocialConfig',
     'services.apps.ServicesConfig',
     'qr_code',
-    'django_heroku.settings(locals())',
+    #'django_heroku.settings(locals())',
 ]
 
 MIDDLEWARE = [
