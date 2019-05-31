@@ -1,1 +1,1 @@
-web: gunicorn donatecrw.donatecrw.wsgi --log-file -
+web: gunicorn donatecrw.wsgi --log-file -
