@@ -192,7 +192,7 @@
                 "sha256:b5725a0bd4ba422ab0e66e89e030c806576753ea3ee08554382c14e685d117b5"
             ],
             "index": "pypi",
-            "version": "==1.23"
+            "version": "==1.24.2"
         },
         "whitenoise": {
             "hashes": [
