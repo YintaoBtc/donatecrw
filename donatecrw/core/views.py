@@ -34,6 +34,8 @@ def instruct_wallet(method, params):
 def home(request):
     print("Hello")
 
+
+    """
     services = Service.objects.all()
 
     #Check Balance for each service
@@ -73,6 +75,7 @@ def home(request):
                 service.amount_donate = balance
                 service.progress = finish
                 service.save()
+    """
 
     return render(request, "core/home.html")
 

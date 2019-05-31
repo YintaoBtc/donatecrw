@@ -1,5 +1,6 @@
 
 import os
+import django_heroku
 
 #Env variables
 from dotenv import load_dotenv, find_dotenv
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'social.apps.SocialConfig',
     'services.apps.ServicesConfig',
     'qr_code',
+    'django_heroku.settings(locals())',
 ]
 
 MIDDLEWARE = [
