@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'social.apps.SocialConfig',
     'services.apps.ServicesConfig',
     'qr_code',
-    'django_heroku.settings(locals())',
+    #'django_heroku.settings(locals())',
 ]
 
 MIDDLEWARE = [
