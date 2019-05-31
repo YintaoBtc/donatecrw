@@ -1,6 +1,6 @@
 
 import os
-import django_heroku
+#import django_heroku
 
 #Env variables
 from dotenv import load_dotenv, find_dotenv
@@ -18,9 +18,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "1239021i3mdapsdsa9adas"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-HOSTS = os.getenv("HOSTS")
+#HOSTS = os.getenv("HOSTS")
 ALLOWED_HOSTS = ["*"]
 
 
@@ -124,7 +124,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/core/static/'
+if DEBUG:
+   STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, 'core/static'),
+   ]
+else:
+   STATIC_ROOT = os.path.join(BASE_DIR,'core/static')
+
 
 #Media Config
 MEDIA_URL = '/media/'
