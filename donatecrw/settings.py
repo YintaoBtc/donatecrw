@@ -15,7 +15,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "19023821903821ikfopalmdla" #os.environ("SECRET_KEY")  
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -82,12 +82,12 @@ WSGI_APPLICATION = 'donatecrw.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ("DB_ENGINE"),
-        'NAME':  os.environ("DB_NAME"),                      
-        'USER':  os.environ("DB_USER"),
-        'PASSWORD': os.environ("DB_PASSWORD"),
-        'HOST':  os.environ("DB_HOST"),
-        'PORT':  os.environ("DB_PORT"),
+        'ENGINE': os.environ["DB_ENGINE"],
+        'NAME':  os.environ["DB_NAME"],                      
+        'USER':  os.environ["DB_USER"],
+        'PASSWORD': os.environ["DB_PASSWORD"],
+        'HOST':  os.environ["DB_HOST"],
+        'PORT':  os.environ["DB_PORT"],
     }
 }
 
