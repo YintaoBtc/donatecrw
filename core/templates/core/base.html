@@ -85,7 +85,7 @@
             {% for page in page_list %}
                 <a href="{% url 'page' page.id page.title|slugify %}" class="link">{{ page.title}}</a> {% if not forloop.last %} * {% endif%} 
             {% endfor %}
-                <p style="color:rgb(219, 62, 127)" class="m-0 mbt1 text-center">Donate to the developer: <br> 1N6EEqqu22icYxWqVBc46xJz9FqabD8GGH <br>{% qr_from_text "1N6EEqqu22icYxWqVBc46xJz9FqabD8GGH" size="T" %}
+                <p style="color:rgb(219, 62, 127)" class="m-0 mbt1 text-center">Donate to the developer: <br> CRWbB4og3TMXDahr7dCaZQ2NUY57mVb1G1bi <br>{% qr_from_text "1N6EEqqu22icYxWqVBc46xJz9FqabD8GGH" size="T" %}
                 </p>
             </div>
             <!-- Grid column -->
@@ -163,9 +163,6 @@
                   </li>
                   <li>
                     <a href="https://gitlab.crown.tech/crown/crown-core" target="_blank" style="color:#31B3C6">GitLab</a>
-                  </li>
-                  <li>
-                    <a href="https://mm.crownlab.eu/crown/channels/donatecrown" target="_blank" style="color:#31B3C6">Mattermost Donate CRW</a>
                   </li>
                   <li>
                     <a href="http://crwfaucet.com/" target="_blank" style="color:#31B3C6">Crown Faucet</a>
