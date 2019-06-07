@@ -32,8 +32,8 @@ def instruct_wallet(method, params):
 
 # Update all info on home.
 def home(request):
-    x = instruct_wallet("getinfo", [])
-    print(x)
+    #x = instruct_wallet("getinfo", [])
+    #print(x)
 
 
     """
