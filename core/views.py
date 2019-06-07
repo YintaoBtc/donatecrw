@@ -13,9 +13,9 @@ load_dotenv(find_dotenv())
 def instruct_wallet(method, params):
 
     #Set data for login
-    RPC_USER = os.getenv("RPC_USER")
-    RPC_PHRASE = os.getenv("RPC_PHRASE")
-    RPC_URL = os.getenv("RPC_URL")
+    RPC_USER = ENV['RPC_USER']
+    RPC_PHRASE = ENV['RPC_PHRASE']
+    RPC_URL = ENV['RPC_URL']
 
     #Check crownd for info
     payload = json.dumps({"method": method, "params": params})
@@ -32,8 +32,8 @@ def instruct_wallet(method, params):
 
 # Update all info on home.
 def home(request):
-    #x = instruct_wallet("getinfo", [])
-    #print(x)
+    x = instruct_wallet("getinfo", [])
+    print(x)
 
 
     """

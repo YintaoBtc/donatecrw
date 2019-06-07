@@ -80,14 +80,27 @@ WSGI_APPLICATION = 'donatecrw.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd9q0kchrsjkcfu',                      
+        'USER': 'jbuldqwprgrugk',
+        'PASSWORD': '4b2829308fd53206e5a402308ed350f51a73afd46c4342cdc508b2ce31745679',
+        'HOST': 'ec2-54-228-252-67.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
+
+
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
