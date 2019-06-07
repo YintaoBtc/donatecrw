@@ -15,7 +15,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "1239021i3mdapsdsa9adas"
+SECRET_KEY = os.getenv("SECRET_KEY")  
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -82,12 +82,12 @@ WSGI_APPLICATION = 'donatecrw.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd9q0kchrsjkcfu',                      
-        'USER': 'jbuldqwprgrugk',
-        'PASSWORD': '4b2829308fd53206e5a402308ed350f51a73afd46c4342cdc508b2ce31745679',
-        'HOST': 'ec2-54-228-252-67.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': os.getenv("DB_ENGINE"),
+        'NAME':  os.getenv("DB_NAME"),                      
+        'USER':  os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST':  os.getenv("DB_HOST"),
+        'PORT':  os.getenv("DB_PORT"),
     }
 }
 
